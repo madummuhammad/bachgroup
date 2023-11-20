@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Lato";
+  src: local("../fonts/Lato ExtraBold"), local("../fonts/Lato-ExtraBold"),
+    url("../fonts/Lato-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Lato-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("../fonts/Lato SemiBold"), local("../fonts/Lato-SemiBold"),
+    url("../fonts/Lato-SemiBold.woff2") format("woff2"),
+    url("../fonts/Lato-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("../fonts/Lato Regular"), local("../fonts/Lato-Regular"),
+    url("../fonts/Lato-Regular.woff2") format("woff2"),
+    url("../fonts/Lato-Regular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-family: "Lato";
+  font-weight: 500;
+  font-style: normal;
+}
+h1,
+h2,
+h3 {
+  font-family: "Lato";
+  font-weight: 800;
+  font-style: normal;
+}
+.menu-mobile {
+  max-height: 0;
+  transition: 1s;
+  overflow: hidden;
+  display: block;
+}
+
+.show {
+  max-height: 100vh;
+  display: block;
+  height: 100vh;
+}
+.close-menu {
+  display: none;
+}
+.close-menu.block {
+  display: block;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 11;
+}
+/* 
+===== */
+@media screen and (min-width: 0px) and (max-width: 1023px) {
+  .crousel-mobile {
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 100%;
+    position: relative;
+    height: 216px;
+  }
+
+  .crousel-mobile > div {
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  .crousel-mobile > div > div {
+    margin: 10px;
+    float: left;
+    width: 170px;
+    background: #fff;
+    overflow: hidden;
+  }
+  .overflowhide {
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+  }
+}
+.linkpopup {
+  position: absolute;
+    height: 70px;
+    width: 127px;
+    right: 13px;
+    top: 132px;
+}
+
+.link1 {
+  top: 0;
+  left: 105px;
+}
+
+.link3 {
+  left: 17px;
+}
