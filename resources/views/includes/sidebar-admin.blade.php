@@ -43,6 +43,7 @@
                         <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
                       </svg> Kontak</a>
                     </li>
+                    @if(auth()->user()->hak_akses=='superadmin')
                     <li class="nav-title">Menu</li>
                     <li class="nav-item">
                       <a class="nav-link" href="{{route('admin.setting')}}">
@@ -50,28 +51,27 @@
                           <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
                         </svg> Pengaturan Menu</a>
                       </li>
-                      <li class="nav-title">Pengaturan</li>
-                      @if(auth()->user()->hak_akses=='superadmin')
-                      <li class="nav-item">
-                        <a class="nav-link" href="{{route('user.index')}}">
-                          <svg class="nav-icon">
-                            <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-                          </svg>User</a>
-                        </li>
-                        @endif
+                      @endif
+                        <li class="nav-title">Pengaturan</li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{route('customer.index')}}">
+                          <a class="nav-link" href="{{route('user.index')}}">
                             <svg class="nav-icon">
-                              <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-user-plus"></use>
-                            </svg>Pelanggan</a>
+                              <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                            </svg>User</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="{{route('admin.seo')}}">
+                            <a class="nav-link" href="{{route('customer.index')}}">
                               <svg class="nav-icon">
-                                <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-signal-cellular-4"></use>
-                              </svg>SEO</a>
+                                <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-user-plus"></use>
+                              </svg>Pelanggan</a>
                             </li>
-                          </li>
-                        </ul>
-                        <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
-                      </div>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{{route('admin.seo')}}">
+                                <svg class="nav-icon">
+                                  <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-signal-cellular-4"></use>
+                                </svg>SEO</a>
+                              </li>
+                            </li>
+                          </ul>
+                          <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+                        </div>

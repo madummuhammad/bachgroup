@@ -20,7 +20,7 @@ class TelecommunicationController extends Controller
     {
         $telecommunication=TelecommunicationContractor::first();
         $telecommunicationeng=TelecommunicationContractorEng::first();
-        $image=ContractorImage::get();
+        $image=ContractorImage::orderBy('created_at','ASC')->get();
         $pages=Page::where('id','36435435-96de-4c4a-8aadd-ffcf607d196d')->first();
 
         return view('pages.admin.telecommunication.index',[

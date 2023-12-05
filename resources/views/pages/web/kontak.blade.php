@@ -11,7 +11,7 @@
 		</h3>
 		<div class="container mx-auto flex px-5 lg:pb-8 md:flex-row flex-col items-start">
 			<div class="lg:w-96 mb-10 md:mb-0">
-				<img class=" " alt="hero" src="{{url('/')}}/{{$item->image}}">
+				<img class=" " alt="{{$item->alt_image}}" src="{{url('/')}}/{{$item->image}}">
 			</div>
 			<div class="lg:flex-grow lg:ml-8 md:w-1/2 flex flex-col text-left">
 				@php echo $item->description @endphp

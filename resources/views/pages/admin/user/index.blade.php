@@ -96,7 +96,9 @@ User
                     <div class="mb-3">
                         <select class="form-select" name="hak_akses" aria-label="Default select example">
                             <option selected="" value="">Pilih hak akses</option>
+                            @if(auth()->user()->hak_akses=='superadmin')
                             <option value="superadmin">Super Admin</option>
+                            @endif
                             <option value="admin">Admin</option>
                         </select>
                     </div>
@@ -134,7 +136,9 @@ User
                     <div class="mb-3">
                         <select class="form-select" name="hak_akses" aria-label="Default select example">
                             <option selected="" value="">Pilih hak akses</option>
+                            @if(auth()->user()->hak_akses=='superadmin')
                             <option value="superadmin" @if($item->hak_akses=='superadmin') selected @endif>Super Admin</option>
+                            @endif
                             <option value="admin" @if($item->hak_akses=='admin') selected @endif>Admin</option>
                         </select>
                     </div>

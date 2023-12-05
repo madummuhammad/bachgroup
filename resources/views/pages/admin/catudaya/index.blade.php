@@ -260,7 +260,7 @@
 							@method("POST")
 							@csrf	
 							<div class="mb-3">
-								<input class="form-control" id="exampleFormControlInput1" type="text" maxlength="4" name="title" value="">
+								<input class="form-control" id="exampleFormControlInput1" type="text" name="title" value="">
 							</div>
 							<div class="mb-3">
 								<label class="form-label" for="exampleFormControlInput1">
@@ -301,7 +301,7 @@
 							@method("POST")
 							@csrf	
 							<div class="mb-3">
-								<input class="form-control" id="exampleFormControlInput1" type="text" maxlength="4" name="title" value="{{$item_project->title}}">
+								<input class="form-control" id="exampleFormControlInput1" type="text" name="title" value="{{$item_project->title}}">
 							</div>
 							<div class="mb-3">
 								<label class="form-label" for="exampleFormControlInput1">

@@ -1,7 +1,7 @@
 @extends('layouts.web')
 
 @section('title')
-Beranda
+
 @endsection
 @section('container')
 <!-- bahasa popup -->
@@ -42,7 +42,7 @@ data-id="modal5">
 
 	<div class="container mx-auto flex px-5 lg:pb-8 md:flex-row flex-col items-start">
 		<div class="lg:w-96 mb-10 md:mb-0">
-			<img class=" " alt="hero" src="{{url('/')}}/{{$item->section_2_image}}">
+			<img class=" " alt="{{$item->section_2_alt_image}}" src="{{url('/')}}/{{$item->section_2_image}}">
 		</div>
 		<div class="lg:flex-grow lg:ml-8 md:w-1/2 flex flex-col  text-left">
 			<h2 class="text-blue-two text-xl mb-4">@php echo $item->section_2_title @endphp
@@ -54,7 +54,7 @@ data-id="modal5">
 	</div>
 	<div class="container mx-auto flex px-5 lg:pb-8 md:flex-row flex-col items-start">
 		<div class="lg:w-96 mb-10 md:mb-0">
-			<img class=" " alt="hero" src="{{url('/')}}/{{$item->section_3_image}}">
+			<img class=" " alt="{{$item->section_3_alt_image}}" src="{{url('/')}}/{{$item->section_3_image}}">
 		</div>
 		<div class="lg:flex-grow lg:ml-8 md:w-1/2 flex flex-col  text-left">
 			<h2 class="text-blue-two text-xl mb-4">@php echo $item->section_3_title @endphp

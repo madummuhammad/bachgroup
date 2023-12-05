@@ -142,6 +142,20 @@
 					<!--  -->
 					<!--  Section 3 Sub-->
 					<div class="row mb-3">
+						<div class="col-lg-12 col-12">
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="section_3_title" value="{{$item->section_3_title}}" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('england.svg')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="section_3_title_eng" value="{{$item_eng->section_3_title}}" type="text">
+							</div>
+						</div>
 						<div class="col-lg-4 col-12">
 							<div class="mb-3">
 								<label class="form-label" for="exampleFormControlInput1">
@@ -225,6 +239,34 @@
 					<!--  -->
 					<!-- Section 4 -->
 					<div class="row mb-3">
+						<div class="col-lg-12 col-12">
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="komisaris_title" value="{{$item->komisaris_title}}" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('england.svg')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="komisaris_title_eng" value="{{$item_eng->komisaris_title}}" type="text">
+							</div>
+						</div>
+						<div class="col-lg-12 col-12">
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="structure_title" value="{{$item->structure_title}}" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('england.svg')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="structure_title_eng" value="{{$item_eng->structure_title}}" type="text">
+							</div>
+						</div>
 						<div class="col-lg-12 col-12">
 							<div class="mb-3">
 								<label class="form-label" for="exampleFormControlInput1">

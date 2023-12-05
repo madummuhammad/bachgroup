@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ForgotEmail;
 
 class LoginController extends Controller
 {
@@ -28,6 +31,31 @@ class LoginController extends Controller
         }
 
         return back()->with('loginError', 'Login Gagal! Username atau password salah');
+    }
+
+    public function forgot_password()
+    {
+        return view('auth.forgot-password',[
+            'title' => 'Forgot Password'
+        ]);
+    }
+
+    public function forgot(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|exists:users,email',
+        ], [
+            'email.exists' => 'Email not registered.'
+        ]);
+
+        $member = User::where('email', $request->email)->first();
+
+        if ($member) {
+            Mail::to($member->email)->send(new ForgotEmail($member));
+            return back()->with('success','Password berhasil terkirim ke email anda');
+        } else {
+            return back()->with('loginError', 'Member not found.');
+        }
     }
 
     public function logout(Request $request)

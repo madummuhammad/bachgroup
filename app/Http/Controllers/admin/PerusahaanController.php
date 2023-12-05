@@ -22,11 +22,11 @@ class PerusahaanController extends Controller
     public function index()
     {
         $perusahaan=Perusahaan::first();
-        $milestone=Milestone::with('eng')->get();
-        $milestoneeng=MilestoneEng::first();
+        $milestone=Milestone::with('eng')->orderBy('year','ASC')->get();
+        $milestoneeng=MilestoneEng::orderBy('year','ASC')->get();
         $perusahaaneng=PerusahaanEng::first();
-        $certificate=Certificate::get();
-        $award=Award::get();
+        $certificate=Certificate::orderBy('created_at','DESC')->get();
+        $award=Award::orderBy('created_at','DESC')->get();
         $pages=Page::where('id','36435435-96de-4c4a-8a6c-ffcf607d196c')->first();
         return view('pages.admin.perusahaan.index',[
             'item'=>$perusahaan,
@@ -189,6 +189,8 @@ class PerusahaanController extends Controller
           "section_2_sub_2_title_eng"=> "required",
           "section_2_sub_2_description"=> "required",
           "section_2_sub_2_description_eng"=> "required",
+          "section_3_title"=> "required",
+          "section_3_title_eng"=> "required",
           "section_3_sub_1_title"=> "required",
           "section_3_sub_1_title_eng"=> "required",
           "section_3_sub_1_description"=> "required",
@@ -206,7 +208,9 @@ class PerusahaanController extends Controller
           "section_5_title"=> "required",
           "section_5_title_eng"=> "required",
           "section_6_title"=> "required",
-          "section_6_title_eng"=> "required"
+          "section_6_title_eng"=> "required",
+          "komisaris_title"=> "required",
+          "structure_title"=> "required"
       ]);
 
        $data=[
@@ -217,6 +221,7 @@ class PerusahaanController extends Controller
         "section_2_sub_1_description" => $request->section_2_sub_1_description,
         "section_2_sub_2_title" => $request->section_2_sub_2_title,
         "section_2_sub_2_description" => $request->section_2_sub_2_description,
+        "section_3_title" => $request->section_3_title,
         "section_3_sub_1_title" => $request->section_3_sub_1_title,
         "section_3_sub_1_description" => $request->section_3_sub_1_description,
         "section_3_sub_2_title" => $request->section_3_sub_2_title,
@@ -226,6 +231,8 @@ class PerusahaanController extends Controller
         "section_4_title" => $request->section_4_title,
         "section_5_title" => $request->section_5_title,
         "section_6_title" => $request->section_6_title,
+        "komisaris_title" => $request->komisaris_title,
+        "structure_title" => $request->structure_title,
     ];
 
     $dataEng=[
@@ -236,6 +243,7 @@ class PerusahaanController extends Controller
         "section_2_sub_1_description" => $request->section_2_sub_1_description_eng,
         "section_2_sub_2_title" => $request->section_2_sub_2_title_eng,
         "section_2_sub_2_description" => $request->section_2_sub_2_description_eng,
+        "section_3_title" => $request->section_3_title_eng,
         "section_3_sub_1_title" => $request->section_3_sub_1_title_eng,
         "section_3_sub_1_description" => $request->section_3_sub_1_description_eng,
         "section_3_sub_2_title" => $request->section_3_sub_2_title_eng,
@@ -245,6 +253,8 @@ class PerusahaanController extends Controller
         "section_4_title" => $request->section_4_title_eng,
         "section_5_title" => $request->section_5_title_eng,
         "section_6_title" => $request->section_6_title_eng,
+        "komisaris_title" => $request->komisaris_title_eng,
+        "structure_title" => $request->structure_title_eng,
     ];
 
     if($request->file('header_image')){

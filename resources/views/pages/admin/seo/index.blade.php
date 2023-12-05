@@ -76,7 +76,7 @@ SEO
 					</div>
 					<label for="" class="form-label">Head Script</label>				
 					<div class="mb-3">
-						<textarea name="head_script" class="form-control" id="" cols="30" rows="10"></textarea>
+						<textarea name="head_script" class="form-control" id="" cols="30" rows="10">{{$item->head_script}}</textarea>
 					</div>
 					
 					<div class="d-flex justify-content-end">

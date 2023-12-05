@@ -18,7 +18,7 @@ class CatudayaController extends Controller
     {
         $catudaya=CatuDaya::first();
         $catudayaeng=CatuDayaEng::first();
-        $project=Project::get();
+        $project=Project::orderBy('created_at','DESC')->get();
         $pages=Page::where('id','d8a487db-30a9-4895-80d8-fda47256f820')->first();
         return view('pages.admin.catudaya.index',[
             'item'=>$catudaya,

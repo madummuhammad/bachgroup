@@ -44,6 +44,8 @@ Route::get('/admin/login', [LoginController::class, 'index'])
 Route::post('/admin/login', [LoginController::class, 'authenticate'])
 ->name('admin.login');
 Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/admin/forgot-password', [LoginController::class, 'forgot_password'])->name('admin.forgot-password');
+Route::post('/admin/forgot', [LoginController::class, 'forgot'])->name('admin.forgot');
 
 
 Route::post('/', [WebController::class, 'lang'])->name('lang');
@@ -99,4 +101,6 @@ Route::prefix('admin')
 
     Route::resource('/customer', CustomerController::class);
     Route::post('/customer/section',[CustomerController::class, 'section'])->name('admin.customer.section');
+
+    Route::post('/footer',[SettingmenuController::class, 'footer'])->name('admin.footer');
 });

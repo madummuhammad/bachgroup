@@ -8,7 +8,7 @@
   <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
   <meta name="author" content="Łukasz Holeczek">
   <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-  <title>Login</title>
+  <title>Forgot Password</title>
   <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
@@ -38,45 +38,46 @@
   <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-4">
+        <div class="col-lg-5">
           <div class="card-group d-block d-md-flex row">
             <div class="card col-md-7 p-4 mb-0">
               @if (session()->has('loginError'))
               <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{ session('loginError') }}    
           <!--       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                </button> -->
-              </div>
-              @endif
-              <form action="{{route('admin.login')}}" method="POST">
-                @csrf
-                @method('POST')                
-                <div class="card-body">
-                  <h1>Login</h1>
-                  <p class="text-medium-emphasis">Sign In to your account</p>
-                  <div class="input-group mb-3"><span class="input-group-text">
-                    <svg class="icon">
-                      <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-                    </svg></span>
-                    <input class="form-control" name="email" type="email" placeholder="Email">
-                  </div>
-                  <div class="input-group mb-4"><span class="input-group-text">
-                    <svg class="icon">
-                      <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
-                    </svg></span>
-                    <input class="form-control" name="password" type="password" placeholder="Password">
-                  </div>
-                  <div class="row">
-                    <div class="col-6">
-                      <button class="btn btn-primary px-4" type="submit">Login</button>
-                    </div>
-                    <div class="col-6 text-end">
-                      <a class="btn btn-link px-0" href="{{route('admin.forgot-password')}}">Forgot password?</a>
-                    </div>
-                  </div>
-                </div>
-              </form>
+          </button> -->
+        </div>
+        @endif
+        @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session('success') }}    
+          <!--       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          </button> -->
+        </div>
+        @endif
+        <form action="{{route('admin.forgot')}}" method="POST">
+          @csrf
+          @method('POST')                
+          <div class="card-body">
+            <h1>Forgot Password</h1>
+            <p class="text-medium-emphasis">Enter your email</p>
+            <div class="input-group mb-3"><span class="input-group-text">
+              <svg class="icon">
+                <use xlink:href="{{url('/')}}/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+              </svg></span>
+              <input class="form-control" name="email" type="email" placeholder="Email">
             </div>
+            <div class="row">
+              <div class="col-6">
+                <button class="btn btn-primary px-4" type="submit">Kirim</button>
+              </div>
+              <div class="col-6 text-end">
+                <a class="btn btn-link px-0" href="{{route('admin.login')}}">Kembali ke Login</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
 
            <!--  <div class="card col-md-5 text-white bg-primary py-5">
               <div class="card-body text-center">

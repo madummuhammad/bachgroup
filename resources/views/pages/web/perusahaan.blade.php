@@ -54,7 +54,7 @@
 
 <section class="text-grey-2 container max-w-7xl m-auto">
 	<div class="container px-5 py-16 mx-auto">
-		<h2 class="lg:text-2xl lg:leading-10 text-blue-one text-center pb-8">NILAI-NILAI PERUSAHAAN</h2>
+		<h2 class="lg:text-2xl lg:leading-10 text-blue-one text-center pb-8">{{$item->section_3_title}}</h2>
 		<div class="flex flex-wrap lg:-m-4 w-full text-center">
 			<div class="p-4 md:w-1/3 w-full">
 				<img class="m-auto" src="{{url('web')}}/img/trusted.svg" alt="icon">
@@ -99,7 +99,7 @@
 
 <section class="text-grey-2 container max-w-7xl m-auto">
 	<div class="container px-5 py-16 mx-auto w-full">
-		<h3 class="text-center text-blue-one text-2xl font-extrabold pb-8">KOMISARIS & JAJARAN DIREKTUR</h3>
+		<h3 class="text-center text-blue-one text-2xl font-extrabold pb-8">{{$item->komisaris_title}}</h3>
 		<div class="flex flex-wrap pb-8">
 			<div class="lg:w-1/3 p-[10.66px]">
 				<div class="relative text-center">
@@ -145,7 +145,7 @@
 
 <section class="text-grey-2 container max-w-7xl m-auto">
 	<div class="container px-5 py-16 mx-auto w-full">
-		<h3 class="text-center text-blue-one text-2xl font-extrabold pb-8">STRUKTUR PERUSAHAAN</h3>
+		<h3 class="text-center text-blue-one text-2xl font-extrabold pb-8">{{$item->structure_title}}</h3>
 		<div class="flex justify-center items-center">
 			<img src="{{url('web')}}/img/logo-body.svg" alt="icon-logo">
 
@@ -235,7 +235,7 @@ data-id="modal8">
 
 <section class="text-grey-2 container max-w-7xl m-auto">
 	<div class="container px-5 py-16 mx-auto w-full">
-		<h3 class="text-center text-blue-one text-2xl font-extrabold pb-8">PENGHARGAAN</h3>
+		<h3 class="text-center text-blue-one text-2xl font-extrabold pb-8">{{$item->section_6_title}}</h3>
 
 		<div class="simplecarousel-list lg:simplecarousel-list-none">
 			<div class="crousel-mobile">

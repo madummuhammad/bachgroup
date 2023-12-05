@@ -9,15 +9,53 @@ use App\Models\PageEng;
 use App\Models\NewPage;
 use App\Models\NewPageEng;
 use Illuminate\Support\Str;
+use App\Models\Footer;
+use App\Models\FooterEng;
 
 class SettingmenuController extends Controller
 {
     public function index()
     {
         $page=Page::with('eng','new_page','new_page_eng')->orderBy('created_at','ASC')->get();
+        $footer=Footer::get()->first();
+        $footer_eng=FooterEng::get()->first();
         return view('pages.admin.settingmenu.index',[
-            'item'=>$page
+            'item'=>$page,
+            'footer'=>$footer,
+            'footer_eng'=>$footer_eng
         ]);
+    }
+
+    public function footer(Request $request)
+    {
+        $request->validate([
+          "title"=> "required",
+          "title_eng"=> "required",
+          "copyright"=> "required",
+          "copyright_eng"=> "required",
+          "ig_link"=> "required",
+          "fb_link"=> "required"
+      ]);
+
+
+        $data=[
+            'title'=>$request->title,
+            'copyright'=>$request->copyright,
+            'ig_link'=>$request->ig_link,
+            'fb_link'=>$request->fb_link,
+        ];
+
+        $dataEng=[
+            'title'=>$request->title_eng,
+            'copyright'=>$request->copyright_eng,
+            'ig_link'=>$request->ig_link,
+            'fb_link'=>$request->fb_link,
+        ];
+
+        Footer::first()->update($data);
+        FooterEng::first()->update($dataEng);
+
+        return back()->with('success','Sukses! Data berhasil di ubah');
     }
 
     public function store(Request $request)

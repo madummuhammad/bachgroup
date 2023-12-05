@@ -14,7 +14,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user=User::get();
+        if(auth()->user()->hak_akses=='superadmin'){
+            $user=User::get();
+        } else {
+            $user=User::where('hak_akses','admin')->get();
+        }
         return view('pages.admin.user.index',[
             'item'=>$user
         ]);
@@ -40,8 +44,8 @@ class UserController extends Controller
             'hak_akses' => 'required',
         ]);
 
+        $validatedData['password_text']=$validatedData['password'];
         $validatedData['password'] = Hash::make($validatedData['password']);
-
         User::create($validatedData);
 
         return redirect()
@@ -82,7 +86,8 @@ class UserController extends Controller
         ]);
 
         if ($request->password!==null) {
-            $validatedData['password'] = bcrypt($validatedData['password']);
+            $validatedData['password_text']=$validatedData['password'];
+            $validatedData['password'] = Hash::make($validatedData['password']);
         } else {
             unset($validatedData['password']);
         }

@@ -22,11 +22,14 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="true" />
     <meta name="apple-touch-fullscreen" content="yes" />
-    <title>{{$seo->site_title}} - @yield('title')</title>
+    <title>{{$seo->site_title}} @if(!request()->is('/'))
+        -
+    @endif @yield('title')</title>
+    @php echo $seo->head_script @endphp
 
     <!-- favicon -->
     @stack('prepend-style')
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="{{url('web/img/logo.svg')}}">
 
 
     <!-- css tailwind -->

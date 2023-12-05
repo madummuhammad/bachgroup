@@ -41,14 +41,14 @@ class WebController extends Controller
     {
         if(session('lang')=="eng"){
             $beranda=PerusahaanEng::first();
-            $milestone=MilestoneEng::get();
+            $milestone=MilestoneEng::orderBy('year','ASC')->get();
         } else {
-            $milestone=Milestone::get();
+            $milestone=Milestone::orderBy('year','ASC')->get();
             $beranda=Perusahaan::first();
         }
 
-        $certificate=Certificate::get();
-        $award=Award::get();
+        $certificate=Certificate::orderBy('created_at','DESC')->get();
+        $award=Award::orderBy('created_at','DESC')->get();
 
         return view('pages.web.perusahaan',[
             'item'=>$beranda,
@@ -65,8 +65,8 @@ class WebController extends Controller
         } else {
             $item=TelecommunicationContractor::first();
         }
-        $customer=Customer::get();
-        $image=ContractorImage::get();
+        $customer=Customer::orderBy('created_at','ASC')->get();
+        $image=ContractorImage::orderBy('created_at','ASC')->get();
         $customer_section=CustomerSection::first();
         return view('pages.web.kontraktor',[
             'item'=>$item,
@@ -80,14 +80,14 @@ class WebController extends Controller
     {
         if(session('lang')=="eng"){
             $item=CatuDayaEng::first();
-            $project=ProjectEng::get();
+            $project=ProjectEng::orderBy('created_at','DESC')->get();
         } else {
-            $project=Project::get();
+            $project=Project::orderBy('created_at','DESC')->get();
             $item=CatuDaya::first();
         }
         $customer_section=CustomerSection::first();
-        $customer=Customer::get();
-        $image=ContractorImage::get();
+        $customer=Customer::orderBy('created_at','ASC')->get();
+        $image=ContractorImage::orderBy('created_at','ASC')->get();
         return view('pages.web.catudaya',[
             'item'=>$item,
             'project'=>$project,
