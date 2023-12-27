@@ -181,4 +181,11 @@ class CatudayaController extends Controller
 
         return back()->with('success','Sukses! Data Berhasil Di Ubah');
     }
+
+    public function destroy($id)
+    {
+        Project::where('id',$id)->delete();
+        ProjectEng::where('project_id',$id)->delete();
+        return back()->with('success','Sukses! Data Berhasil Di Hapus');
+    }
 }

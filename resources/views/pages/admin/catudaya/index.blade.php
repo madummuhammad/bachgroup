@@ -211,6 +211,8 @@
 										<td>
 											<button class="btn btn-success btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#editItem{{$item_project->id}}">Edit 
 											</button>
+											<button class="btn btn-danger btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#deleteItem{{$item_project->id}}">Hapus 
+											</button>
 										</td>
 									</tr>
 									@endforeach
@@ -323,6 +325,28 @@
 						<div class="modal-footer">
 							<button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
 							<button class="btn btn-primary">Save changes</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="deleteItem{{$item_project->id}}" tabindex="-1" aria-labelledby="tambahItemLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form action="{{route('admin.catudaya.project.destroy',$item_project->id)}}" method="POST" enctype="multipart/form-data">
+						<div class="modal-header">
+							<h5 class="modal-title" id="tambahItemLabel">Hapus Item</h5>
+							<button class="btn-close" type="button" data-coreui-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							@method("delete")
+							@csrf	
+							<p>Hapus item ini?</p>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
+							<button class="btn btn-danger">Hapus</button>
 						</div>
 					</form>
 				</div>

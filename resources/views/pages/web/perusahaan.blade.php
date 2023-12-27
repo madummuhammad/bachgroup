@@ -105,21 +105,21 @@
 				<div class="relative text-center">
 					<img class="m-auto mb-4" src="{{url('web')}}/img/bod/hartanto.png" alt="">
 					<h4 class="text-blue-two font-semibold text-[20px]">Hartanto Rahardja</h4>
-					<h5 class="text-grey-1 font-medium text-base">Komisaris</h5>
+					<h5 class="text-grey-1 font-medium text-base">{{$item->komisaris}}</h5>
 				</div>
 			</div>
 			<div class="lg:w-1/3 p-[10.66px]">
 				<div class="relative text-center">
 					<img class="m-auto mb-4" src="{{url('web')}}/img/bod/budi.png" alt="">
 					<h4 class="text-blue-two font-semibold text-[20px]">Budi Kurniawan</h4>
-					<h5 class="text-grey-1 font-medium text-base">Direktur Utama</h5>
+					<h5 class="text-grey-1 font-medium text-base">{{$item->direktur_utama}}</h5>
 				</div>
 			</div>
 			<div class="lg:w-1/3 p-[10.66px]">
 				<div class="relative text-center">
 					<img class="m-auto mb-4" src="{{url('web')}}/img/bod/hasbi.png" alt="">
 					<h4 class="text-blue-two font-semibold text-[20px]">Hasby Jap</h4>
-					<h5 class="text-grey-1 font-medium text-base">Direktur Keuangan</h5>
+					<h5 class="text-grey-1 font-medium text-base">{{$item->direktur_keuangan}}</h5>
 				</div>
 			</div>
 		</div>
@@ -128,14 +128,14 @@
 				<div class="relative text-center">
 					<img class="m-auto mb-4" src="{{url('web')}}/img/bod/zulfahmi.png" alt="">
 					<h4 class="text-blue-two font-semibold text-[20px]">Zulfahmi Fithri</h4>
-					<h5 class="text-grey-1 font-medium text-base">Direktur HRGA</h5>
+					<h5 class="text-grey-1 font-medium text-base">{{$item->direktur_hrga}}</h5>
 				</div>
 			</div>
 			<div class="lg:w-1/2 p-4">
 				<div class="relative text-center">
 					<img class="m-auto mb-4" src="{{url('web')}}/img/bod/iwan.png" alt="">
 					<h4 class="text-blue-two font-semibold text-[20px]">Iwan Budy Rahadian</h4>
-					<h5 class="text-grey-1 font-medium text-base">Direktur Pengembangan Bisnis</h5>
+					<h5 class="text-grey-1 font-medium text-base">{{$item->direktur_pengembangan_bisnis}}</h5>
 				</div>
 			</div>
 

@@ -272,6 +272,76 @@
 								<label class="form-label" for="exampleFormControlInput1">
 									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
 								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="komisaris" value="{{$item->komisaris}}" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('england.svg')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="komisaris_eng" value="{{$item_eng->komisaris}}" type="text">
+							</div>
+						</div>
+						<div class="col-lg-12 col-12">
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="direktur_utama" value="{{$item->direktur_utama}}" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('england.svg')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="direktur_utama_eng" value="{{$item_eng->direktur_utama}}" type="text">
+							</div>
+						</div>
+						<div class="col-lg-12 col-12">
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="direktur_keuangan" value="{{$item->direktur_keuangan}}" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('england.svg')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="direktur_keuangan_eng" value="{{$item_eng->direktur_keuangan}}" type="text">
+							</div>
+						</div>
+						<div class="col-lg-12 col-12">
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="direktur_hrga" value="{{$item->direktur_hrga}}" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('england.svg')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="direktur_hrga_eng" value="{{$item_eng->direktur_hrga}}" type="text">
+							</div>
+						</div>
+						<div class="col-lg-12 col-12">
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="direktur_pengembangan_bisnis" value="{{$item->direktur_pengembangan_bisnis}}" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('england.svg')}}" alt="">
+								</label>
+								<input class="form-control" id="exampleFormControlInput1" name="direktur_pengembangan_bisnis_eng" value="{{$item_eng->direktur_pengembangan_bisnis}}" type="text">
+							</div>
+						</div>
+						<div class="col-lg-12 col-12">
+							<div class="mb-3">
+								<label class="form-label" for="exampleFormControlInput1">
+									<img class="img-fluid flag " src="{{url('indonesia.png')}}" alt="">
+								</label>
 								<input class="form-control" id="exampleFormControlInput1" name="section_4_title" value="{{$item->section_4_title}}" type="text">
 							</div>
 							<div class="mb-3">
@@ -312,6 +382,8 @@
 										</td>
 										<td>
 											<button class="btn btn-success btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#editItem{{$item_milestone->id}}">Edit 
+											</button>
+											<button class="btn btn-danger btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#deleteItem{{$item_milestone->id}}">Hapus 
 											</button>
 										</td>
 									</tr>
@@ -355,8 +427,13 @@
 									<tr>
 										<th scope="row">{{$no++}}</th>
 										<td><img style="width:100px" src="{{url('/')}}/{{$item_certificate->image}}" alt=""></td>
-										<td><button class="btn btn-success btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#editSertifikat{{$item_certificate->id}}">Edit 
-										</button></td>
+										<td>
+											<button class="btn btn-success btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#editSertifikat{{$item_certificate->id}}">Edit 
+											</button>
+
+											<button class="btn btn-danger btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#deleteCertificate{{$item_certificate->id}}">Hapus 
+											</button>
+										</td>
 									</tr>
 									@endforeach
 								</tbody>
@@ -399,8 +476,12 @@
 									<tr>
 										<th scope="row">{{$no++}}</th>
 										<td><img style="width:100px" src="{{url('/')}}/{{$item_award->image}}" alt=""></td>
-										<td><button class="btn btn-success btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#editPenghargaan{{$item_award->id}}">Edit 
-										</button></td>
+										<td>
+											<button class="btn btn-success btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#editPenghargaan{{$item_award->id}}">Edit 
+											</button>
+											<button class="btn btn-danger btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#deletePenghargaan{{$item_award->id}}">Hapus 
+											</button>
+										</td>
 									</tr>
 									@endforeach
 								</tbody>
@@ -496,6 +577,28 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="deleteItem{{$item_milestone->id}}" tabindex="-1" aria-labelledby="tambahItemLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="{{route('admin.perusahaan.milestones.destroy',$item_milestone->id)}}" method="POST" enctype="multipart/form-data">
+					<div class="modal-header">
+						<h5 class="modal-title" id="tambahItemLabel">Hapus Item</h5>
+						<button class="btn-close" type="button" data-coreui-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						@method("delete")
+						@csrf	
+						<p>Hapus item ini?</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
+						<button class="btn btn-danger">Hapus</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	@endforeach
 
 
@@ -553,6 +656,28 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="deleteCertificate{{$item_certificate->id}}" tabindex="-1" aria-labelledby="tambahItemLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="{{route('admin.perusahaan.certificate.destroy',$item_certificate->id)}}" method="POST" enctype="multipart/form-data">
+					<div class="modal-header">
+						<h5 class="modal-title" id="tambahItemLabel">Hapus Item</h5>
+						<button class="btn-close" type="button" data-coreui-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						@method("delete")
+						@csrf	
+						<p>Hapus item ini?</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
+						<button class="btn btn-danger">Hapus</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	@endforeach
 
 
@@ -605,6 +730,28 @@
 					<div class="modal-footer">
 						<button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
 						<button class="btn btn-primary">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="deletePenghargaan{{$item_award->id}}" tabindex="-1" aria-labelledby="tambahItemLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="{{route('admin.perusahaan.award.destroy',$item_award->id)}}" method="POST" enctype="multipart/form-data">
+					<div class="modal-header">
+						<h5 class="modal-title" id="tambahItemLabel">Hapus Item</h5>
+						<button class="btn-close" type="button" data-coreui-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						@method("delete")
+						@csrf	
+						<p>Hapus item ini?</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
+						<button class="btn btn-danger">Hapus</button>
 					</div>
 				</form>
 			</div>

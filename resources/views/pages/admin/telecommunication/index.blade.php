@@ -194,8 +194,13 @@
 									<tr>
 										<th scope="row">{{$no++}}</th>
 										<td><img style="width:100px" src="{{url('/')}}/{{$item_image->image}}" alt=""></td>
-										<td><button class="btn btn-success btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#editImage{{$item_image->id}}">Edit 
-										</button></td>
+										<td>
+											<button class="btn btn-success btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#editImage{{$item_image->id}}">Edit 
+											</button>
+
+											<button class="btn btn-danger btn-sm" type="button" data-coreui-toggle="modal" data-coreui-target="#deleteImage{{$item_image->id}}">Hapus 
+											</button>
+										</td>
 									</tr>
 									@endforeach
 								</tbody>
@@ -260,6 +265,28 @@
 					<div class="modal-footer">
 						<button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
 						<button class="btn btn-primary">Save changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="deleteImage{{$item_image->id}}" tabindex="-1" aria-labelledby="tambahItemLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="{{route('admin.telecommunication_contractor.image.destroy',$item_image->id)}}" method="POST" enctype="multipart/form-data">
+					<div class="modal-header">
+						<h5 class="modal-title" id="tambahItemLabel">Hapus Item</h5>
+						<button class="btn-close" type="button" data-coreui-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						@method("delete")
+						@csrf	
+						<p>Hapus item ini?</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-coreui-dismiss="modal">Close</button>
+						<button class="btn btn-danger">Hapus</button>
 					</div>
 				</form>
 			</div>

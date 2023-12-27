@@ -70,22 +70,27 @@ Route::prefix('admin')
     Route::post('/perusahaan',[PerusahaanController::class, 'store'])->name('admin.perusahaan.create');
     Route::post('/perusahaan/milestones',[PerusahaanController::class, 'store_milestones'])->name('admin.perusahaan.milestones.create');
     Route::post('/perusahaan/milestones/{id}',[PerusahaanController::class, 'update_milestones'])->name('admin.perusahaan.milestones.update');
+    Route::delete('/perusahaan/milestones/{id}',[PerusahaanController::class, 'destroy_milestones'])->name('admin.perusahaan.milestones.destroy');
 
     Route::post('/perusahaan/certificate',[PerusahaanController::class, 'store_certificate'])->name('admin.perusahaan.certificate.create');
     Route::post('/perusahaan/certificate/{id}',[PerusahaanController::class, 'update_certificate'])->name('admin.perusahaan.certificate.update');
+    Route::delete('/perusahaan/certificate/{id}',[PerusahaanController::class, 'destroy_certificate'])->name('admin.perusahaan.certificate.destroy');
 
     Route::post('/perusahaan/award',[PerusahaanController::class, 'store_award'])->name('admin.perusahaan.award.create');
     Route::post('/perusahaan/award/{id}',[PerusahaanController::class, 'update_award'])->name('admin.perusahaan.award.update');
+    Route::delete('/perusahaan/award/{id}',[PerusahaanController::class, 'destroy_award'])->name('admin.perusahaan.award.destroy');
 
     Route::get('/telecommunication_contractor',[TelecommunicationController::class, 'index'])->name('admin.telecommunication_contractor');
     Route::post('/telecommunication_contractor',[TelecommunicationController::class, 'store'])->name('admin.telecommunication_contractor.create');
     Route::post('/telecommunication_contractor/image',[TelecommunicationController::class, 'store_image'])->name('admin.telecommunication_contractor.image.create');
     Route::post('/telecommunication_contractor/image/{id}',[TelecommunicationController::class, 'update_image'])->name('admin.telecommunication_contractor.image.update');
+    Route::delete('/telecommunication_contractor/image/{id}',[TelecommunicationController::class, 'destroy'])->name('admin.telecommunication_contractor.image.destroy');
 
     Route::get('/catudaya',[CatudayaController::class, 'index'])->name('admin.catudaya');
     Route::post('/catudaya',[CatudayaController::class, 'store'])->name('admin.catudaya.create');
     Route::post('/catudaya/project',[CatudayaController::class, 'store_project'])->name('admin.catudaya.project.create');
     Route::post('/catudaya/project/{id}',[CatudayaController::class, 'update_project'])->name('admin.catudaya.project.update');
+    Route::delete('/catudaya/project/{id}',[CatudayaController::class, 'destroy'])->name('admin.catudaya.project.destroy');
 
     Route::get('/contact',[ContactController::class, 'index'])->name('admin.contact');
     Route::post('/contact',[ContactController::class, 'store'])->name('admin.contact.create');

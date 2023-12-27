@@ -148,6 +148,12 @@ public function update_image(Request $request,$id)
     return back()->with('success','Sukses! Data Berhasil Di Ubah');
 }
 
+public function destroy($id)
+{
+    ContractorImage::where('id',$id)->delete();
+    return back()->with('success','Sukses! Data Berhasil Di Hapus');
+}
+
     /**
      * Display the specified resource.
      */
@@ -175,8 +181,5 @@ public function update_image(Request $request,$id)
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+
 }

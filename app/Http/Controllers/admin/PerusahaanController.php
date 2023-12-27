@@ -98,6 +98,13 @@ class PerusahaanController extends Controller
         return back()->with('success','Sukses! Data Berhasil Di Ubah');
     }
 
+    public function destroy_milestones($id)
+    {
+        Milestone::where('id',$id)->delete();
+        MilestoneEng::where('milestone_id',$id)->delete();
+        return back()->with('success','Sukses! Data Berhasil Di Hapus');
+    }
+
 
     public function store_certificate(Request $request)
     {
@@ -112,6 +119,18 @@ class PerusahaanController extends Controller
         Certificate::create($data);
 
         return back()->with('success','Sukses! Data Berhasil Di Tambah');
+    }
+
+    public function destroy_certificate($id)
+    {
+        Certificate::where('id',$id)->delete();
+        return back()->with('success','Sukses! Data Berhasil Di Hapus');
+    }
+
+    public function destroy_award($id)
+    {
+        Award::where('id',$id)->delete();
+        return back()->with('success','Sukses! Data Berhasil Di Hapus');
     }
 
     public function update_certificate(Request $request,$id)
@@ -210,7 +229,17 @@ class PerusahaanController extends Controller
           "section_6_title"=> "required",
           "section_6_title_eng"=> "required",
           "komisaris_title"=> "required",
-          "structure_title"=> "required"
+          "structure_title"=> "required",
+          "komisaris"=> "required",
+          "komisaris_eng"=> "required",
+          "direktur_utama"=> "required",
+          "direktur_utama_eng"=> "required",
+          "direktur_keuangan"=> "required",
+          "direktur_keuangan_eng"=> "required",
+          "direktur_hrga"=> "required",
+          "direktur_hrga_eng"=> "required",
+          "direktur_pengembangan_bisnis"=> "required",
+          "direktur_pengembangan_bisnis_eng"=> "required",
       ]);
 
        $data=[
@@ -233,6 +262,11 @@ class PerusahaanController extends Controller
         "section_6_title" => $request->section_6_title,
         "komisaris_title" => $request->komisaris_title,
         "structure_title" => $request->structure_title,
+        "komisaris"=> $request->komisaris,
+        "direktur_utama"=> $request->direktur_utama,
+        "direktur_keuangan"=> $request->direktur_keuangan,
+        "direktur_hrga"=> $request->direktur_hrga,
+        "direktur_pengembangan_bisnis"=> $request->direktur_pengembangan_bisnis,
     ];
 
     $dataEng=[
@@ -255,6 +289,11 @@ class PerusahaanController extends Controller
         "section_6_title" => $request->section_6_title_eng,
         "komisaris_title" => $request->komisaris_title_eng,
         "structure_title" => $request->structure_title_eng,
+        "komisaris"=> $request->komisaris_eng,
+        "direktur_utama"=> $request->direktur_utama_eng,
+        "direktur_keuangan"=> $request->direktur_keuangan_eng,
+        "direktur_hrga"=> $request->direktur_hrga_eng,
+        "direktur_pengembangan_bisnis"=> $request->direktur_pengembangan_bisnis_eng,
     ];
 
     if($request->file('header_image')){
