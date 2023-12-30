@@ -35,68 +35,69 @@
                         @if($beranda->hidden==0)
                         <a style="text-transform: uppercase;" class="flex justify-center items-center {{ (request()->is('/')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
                             href="{{url('/')}}">{{$beranda->name}}</a>
-                        @endif
-                        @if($perusahaan->hidden==0)
-                        <a style="text-transform: uppercase;" class="flex justify-center items-center {{ (request()->is('perusahaan')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
-                            href="{{route('perusahaan')}}">{{$perusahaan->name}}</a>
-                        @endif
-                        @if($kontraktor->hidden==0)
-                        <a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('kontraktor')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
-                            href="{{url('/kontraktor')}}">{{$kontraktor->name}}</a>
-                        @endif
-                        @if($catudaya->hidden==0)
-                        <a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('catudaya')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
-                            href="{{url('/catudaya')}}">{{$catudaya->name}}</a>
-                        @endif
-                        @if($kontak->hidden==0)
-                        <a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('kontak')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
-                            href="{{url('/kontak')}}">{{$kontak->name}}</a>
-                        @endif
-
-@foreach($new_page as $new)
-<a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('page/'.$new->slug)) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
-    href="{{url('page/'.$new->slug)}}">{{$new->name}}</a>
-@endforeach
-
-                                    <!-- btn bahasa -->
-                                    <div class="flex justify-center relative">
-                                        <button id="dropdown-button"
-                                        class="inline-flex justify-center text-sm font-bold items-center text-blue-two ">
-                                        @if(session('lang')=="eng")
-                                        EN
-                                        @else
-                                        ID
-                                        @endif
-
-                                        <svg width="12" height="6" class="ml-2" viewBox="0 0 12 6" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6 6L0 0H12L6 6Z" fill="#2473BA" />
-                                    </svg>
-
-                                </button>
-                                <div id="dropdown-menu"
-                                class="origin-top-right absolute right-0 mt-8 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden">
-                                <div class="py-2 p-2" role="menu" aria-orientation="vertical"
-                                aria-labelledby="dropdown-button">
-                                <form action="{{route('lang')}}" method="POST">
-                                    @csrf
-                                    <button type="submit" 
-                                    class="flex js-btn-modal rounded-md w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer">
-                                    @if(session('lang')=="eng")
-                                    ID
-                                    @else
-                                    EN
+                            @endif
+                            @if($perusahaan->hidden==0)
+                            <a style="text-transform: uppercase;" class="flex justify-center items-center {{ (request()->is('perusahaan')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
+                                href="{{route('perusahaan')}}">{{$perusahaan->name}}</a>
+                                @endif
+                                @if($kontraktor->hidden==0)
+                                <a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('kontraktor')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
+                                    href="{{url('/kontraktor')}}">{{$kontraktor->name}}</a>
                                     @endif
-                                </button>
-                            </form>
+                                    @if($catudaya->hidden==0)
+                                    <a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('catudaya')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
+                                        href="{{url('/catudaya')}}">{{$catudaya->name}}</a>
+                                        @endif
+                                        @if($kontak->hidden==0)
+                                        <a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('kontak')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
+                                            href="{{url('/kontak')}}">{{$kontak->name}}</a>
+                                            @endif
+                                            <a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('blog')) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
+                                                href="{{url('/blog')}}">BLOG</a>
+                                                @foreach($new_page as $new)
+                                                <a style="text-transform: uppercase;" class="flex justify-center items-center  {{ (request()->is('page/'.$new->slug)) ? 'text-blue-two font-extrabold' : 'text-grey-2 font-semibold' }}"
+                                                    href="{{url('page/'.$new->slug)}}">{{$new->name}}</a>
+                                                    @endforeach
+
+                                                    <!-- btn bahasa -->
+                                                    <div class="flex justify-center relative">
+                                                        <button id="dropdown-button"
+                                                        class="inline-flex justify-center text-sm font-bold items-center text-blue-two ">
+                                                        @if(session('lang')=="eng")
+                                                        EN
+                                                        @else
+                                                        ID
+                                                        @endif
+
+                                                        <svg width="12" height="6" class="ml-2" viewBox="0 0 12 6" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6 6L0 0H12L6 6Z" fill="#2473BA" />
+                                                    </svg>
+
+                                                </button>
+                                                <div id="dropdown-menu"
+                                                class="origin-top-right absolute right-0 mt-8 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden">
+                                                <div class="py-2 p-2" role="menu" aria-orientation="vertical"
+                                                aria-labelledby="dropdown-button">
+                                                <form action="{{route('lang')}}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" 
+                                                    class="flex js-btn-modal rounded-md w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer">
+                                                    @if(session('lang')=="eng")
+                                                    ID
+                                                    @else
+                                                    EN
+                                                    @endif
+                                                </button>
+                                            </form>
 
 
 
-                        </div>
-                    </div>
-                    <script>
-                        const dropdownButton = document.getElementById('dropdown-button');
-                        const dropdownMenu = document.getElementById('dropdown-menu');
+                                        </div>
+                                    </div>
+                                    <script>
+                                        const dropdownButton = document.getElementById('dropdown-button');
+                                        const dropdownMenu = document.getElementById('dropdown-menu');
                                 let isDropdownOpen = true; // Set to true to open the dropdown by default, false to close it by default
 
                                 // Function to toggle the dropdown
@@ -148,10 +149,12 @@
                         href="{{url('/catudaya')}}">{{$catudaya->name}}</a>
                         <a class="border-b-white border-b px-4 py-8 block text-center font-semibold items-center text-grey-2"
                         href="{{url('/kontak')}}">{{$kontak->name}}</a>
-@foreach($new_page as $new)
-            <a class="border-b-white border-b px-4 py-8 block text-center font-semibold items-center text-grey-2"
+                        <a class="border-b-white border-b px-4 py-8 block text-center font-semibold items-center text-grey-2"
+                        href="{{url('/blog')}}">BLOG</a>
+                        @foreach($new_page as $new)
+                        <a class="border-b-white border-b px-4 py-8 block text-center font-semibold items-center text-grey-2"
                         href="{{url('/page')}}/{{$new->slug}}">{{$new->name}}</a>
-@endforeach
+                        @endforeach
                         <!-- btn bahasa -->
                         <div class="flex justify-center relative">
                             <button id="dropdown-button2"

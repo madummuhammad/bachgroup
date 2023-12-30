@@ -11,7 +11,9 @@ use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\SeoController;
 use App\Http\Controllers\admin\SettingmenuController;
+use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\CustomerController;
+use App\Http\Controllers\admin\CustomercatudayaController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\PageController;
 
@@ -55,6 +57,8 @@ Route::get('/perusahaan', [WebController::class, 'perusahaan'])->name('perusahaa
 Route::get('/kontraktor', [WebController::class, 'kontraktor'])->name('kontraktor');
 Route::get('/catudaya', [WebController::class, 'catudaya'])->name('catudaya');
 Route::get('/kontak', [WebController::class, 'kontak'])->name('kontak');
+Route::get('/blog', [WebController::class, 'blog'])->name('blog');
+Route::get('/blog/{id}', [WebController::class, 'blog_show'])->name('blog.web.show');
 Route::get('/page/{slug}', [PageController::class, 'index']);
 
 //Admin
@@ -106,6 +110,9 @@ Route::prefix('admin')
 
     Route::resource('/customer', CustomerController::class);
     Route::post('/customer/section',[CustomerController::class, 'section'])->name('admin.customer.section');
+    Route::resource('/customercatudaya', CustomercatudayaController::class);
+    // Route::post('/customercatudaya/section',[CustomercatudayaController::class, 'section'])->name('admin.customercatudaya.section');
 
     Route::post('/footer',[SettingmenuController::class, 'footer'])->name('admin.footer');
+    Route::resource('/blog', BlogController::class);
 });
